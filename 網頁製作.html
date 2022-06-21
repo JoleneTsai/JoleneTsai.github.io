@@ -1,0 +1,142 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>猜拳奪旗</title>
+	<script >
+		console.log("耶!你獲得了一個沒什麼用的成就'好奇寶寶'好了你現在可以把我關掉了");
+		alert("由於剛剛那個沒用的開頭都沒有講到規則");		
+		alert("所以我來啦!");	
+		alert("和電腦猜拳，贏者可前進一格，到達對方領地者獲勝");	
+		
+		function show1(){document.querySelector("#start1").style.display="block";}	
+		function show2(){document.querySelector("#start2").style.display="block";}
+        function show3(){document.querySelector("#start3").style.display="block";}	
+		function showstart(){document.querySelector("#Startgame").style.display="block";}	
+		function showtie(){document.querySelector("#tie").style.display="block";}	
+		function showflag(){document.querySelector("#getflag").style.display="block";}	
+		function showwin(){document.querySelector("#win").style.display="block";}	
+		function off1(){document.querySelector("#start1").style.display="none";}	
+		function off2(){document.querySelector("#start2").style.display="none";}
+        function off3(){document.querySelector("#start3").style.display="none";}	
+		function offstart(){document.querySelector("#Startgame").style.display="none";}	
+		function offtie(){document.querySelector("#tie").style.display="none";}	
+		function offflag(){document.querySelector("#getflag").style.display="none";}	
+		function gamestart(){
+			setTimeout(show3);
+			setTimeout(off3,1000);
+			setTimeout(show2,1000);
+			setTimeout(off2,2000);
+			setTimeout(show1,2000);
+			setTimeout(off1,3000);
+			setTimeout(showstart,3000);
+			setTimeout(offstart,4000);
+			
+			}
+		gamestart()
+		pos=0;
+		posa=0;
+		computer=0;
+		player=0;
+		function turn1(){player=1;}
+		function turn2(){player=2;}
+		function turn3(){player=3;}
+		
+		function mov1(){
+			pos+=200;
+			document.querySelector("#pla1").style.left=pos+"px";
+			}
+		function mov2(){
+			posa+=200;
+			document.querySelector("#pla2").style.right=posa+"px";
+			}		
+		function sure(){
+		
+			if (player==0){
+				alert("請選擇一個你要出的拳");
+				}
+			else{
+		         computer= Math.floor(Math.random()*3);
+		         
+		         if(computer==player){
+		         	setTimeout(showtie);
+		         	setTimeout(offtie,2000);
+					player=0;
+		         	}
+		         else if(computer==1){
+		         	if(player==2){
+		         		mov1();
+						player=0;
+						alert("電腦出剪刀");
+		         		}
+		         	else{
+						mov2();
+						player=0;
+						alert("電腦出剪刀");}
+		         	}
+		         else if(computer==2){
+		         	if(player==3){
+		         		mov1();
+						player=0;
+						alert("電腦出石頭");
+		         		}
+		         	else{mov2();
+						player=0;
+						alert("電腦出石頭");}
+		         	}
+		         else if(computer==3){
+		         	if(player==1){
+		         		mov1();
+						 player=0;
+						 alert("電腦出布");
+		         		}
+		         	else{mov2();
+						player=0;
+						alert("電腦出布");}
+		         	}}
+			
+			
+		         if(pos>=1200 ||posa>=1200){
+		         	if(pos>=1200){
+		         		showflag();
+		         		setTimeout(offflag,3000);
+		         		setTimeout(showwin,3000);
+		         		}
+		         	else if(posa>=1200){
+		         		document.querySelector("#lose").style.display="block";
+					}}}
+				
+				
+			
+		
+		
+		
+		</script>
+	</head>
+
+	<body background="https://i.imgur.com/8PJBzdd.png" style=" background-repeat:no-repeat ;background-size:100% 100%; background-attachment: fixed;" >
+		<div style="position:relative">
+		<img src="https://i.imgur.com/ShMMsuA.png" id="pla1"  width="180px" style="position:absolute; left:15; top:300; z-index:1" />
+		<img src="https://i.imgur.com/hrmU5PR.png" id="pla2"  width="180px" style="position:absolute; right:15; top:300; z-index:2"; />
+		<img src="https://i.imgur.com/yc0xVdA.png" id="start1" width="500px" style="position:absolute; left:500; top:0; z-index:3;display:none" />
+		<img src="https://i.imgur.com/7USbGQb.png" id="start2"  width="500px" style="position:absolute; left:500; top:0; z-index:4;display:none" />
+		<img src="https://i.imgur.com/5i1iiqY.png" id="start3"  width="500px" style="position:absolute; left:500; top:0; z-index:5;display:none" />
+		<img src="https://i.imgur.com/Rm0hFOv.png" id="Startgame"  width="600px" style="position:absolute; left:500; top:0; z-index:6 ;display:none" />
+		<img src="https://i.imgur.com/oILcEbf.png" id="lose"  width="500px" style="position:absolute; left:500; top:0; z-index:7;display:none" />
+		<img src="https://i.imgur.com/QxtLnuX.png" id="win"  width="500px" style="position:absolute; left:500; top:0; z-index:8;display:none" />
+		<img src="https://i.imgur.com/TeG4Adg.png" id="tie"  width="500px" style="position:absolute; left:500; top:0; z-index:8;display:none" />
+		<img src="https://i.imgur.com/W10y9Ej.png" id="getflag"  width="500px" style="position:absolute; left:500; top:0; z-index:8;display:none" />
+		</div>
+		
+		<div style="position:relative">
+		<img src="https://i.imgur.com/8sPZ0fH.png" id="scissors" width="200px" style="position:absolute; left:200; top:470; z-index:1" onclick="turn1()"/>
+		<img src="https://i.imgur.com/8VhGNHb.png" id="stone"  width="200px" style="position:absolute; left:600; top:470; z-index:2" onclick="turn2()"/>
+		<img src="https://i.imgur.com/PaiFQ7u.png" id="paper"  width="200px" style="position:absolute; left:1000; top:470; z-index:3" onclick="turn3()"/>
+		<button onclick="sure()"  style="position:absolute; left:1300; top:600; z-index:4">確定</button>
+		
+		</div>	
+		
+		
+	</body>
+
+</html>
