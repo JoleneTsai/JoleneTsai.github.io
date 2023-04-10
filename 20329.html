@@ -1,0 +1,240 @@
+
+<html>
+	<head>
+		<title>JOHN的網頁</title>	
+	</head>
+	<style>
+.popup {
+    cursor: pointer;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+}
+
+.popup .show {
+    visibility: visible;
+}
+
+</style>
+	<body>
+	<button onclick="guessNumber()" style="color:Orange;">猜數字!</button>
+		<button onclick="hide()" id="bt3" style="color:Orange;">隱藏標題</button>
+		<input id="cin" placeholder="請輸入標題"></input>
+		<button onclick="change2()" id="bt3" style="color:Orange;">根據輸入改標題</button>
+		<button onclick="change3()" id="bt4" style="color:Orange;">還原標題</button>
+		<div id="start2" style="display:block">
+		<h1 style="color:SteelBlue;" id="start" style="display:block" onclick="change()">John(小強)的介紹</h1>
+	<p>
+	<img src="https://pbs.twimg.com/profile_images/999148496413343744/j_fgLqDM_400x400.jpg" width="5%">
+	小強是作者Eileen最早開始養的法鬥犬，在小強過世後，作者因為想念愛犬，決定開始創作圖文並茂的系列作品。<br>
+	之所以叫「小強」，其實是因為牠曾徒手抓蟑螂的緣故。
+	</p>
+<br/>	
+<hr>
+<br/>		
+	<ul> <strong>John的朋友</strong></ul>
+		<li>柴柴Shiba<img src="https://stickershop.line-scdn.net/sticonshop/v1/sticon/5c875478031a6778cf2f31be/iphone/011.png" width="5%">「柴柴」的名字純粹因為牠是隻柴犬。</li>
+		
+		<li>圓圓Yuan<img src="https://stickershop.line-scdn.net/stickershop/v1/product/3317561/LINEStorePC/main.png;compress=true" width="5%">「圓圓」是「柴柴」的伴侶，希望牠們合體有「財源強強滾」的諧音。</li>
+<br/>	
+<hr>
+	<ul> <strong>John的社群媒體</strong></ul>
+		<li><a href="https://www.facebook.com/HiJohnnn/" target="_blank">FB</a></li>
+		<li><a href="https://www.instagram.com/hi_johnnn/" target="_blank">IG</a></li>
+		<li><a href="https://shopee.tw/hijohnnn" target="_blank">蝦皮</a></li>
+<br/>	
+<hr>
+<br/>		
+	
+	<ul> <strong>投票<img src="https://images.chinatimes.com/newsphoto/2017-08-25/656/20170825005337.jpg" width="10%"></strong></ul>
+		<table id="main" >
+			<tr >
+				<td>
+					<input type="radio" name="option" checked="checked"/>John<img src="https://4.bp.blogspot.com/-SOrg75lfqWs/WjhuE4zeY8I/AAAAAAAKhQ0/jaRCkNxv6XEorX8aiNf4btOBOdexDAcfgCLcBGAs/s1600/AS003447_04.gif" width="10%">
+				</td>
+			</tr>
+			<tr>
+				<td style="width:550px">
+					<div id=0 style="background-color:#acd6ff; width:0; height:20px; border-width:0px;">
+					</div>
+				</td>
+				<td>
+					<label id="label0">0</label>票
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="radio" name="option"  />Shiba<img src="https://stickershop.line-scdn.net/stickershop/v1/product/16359/LINEStorePC/thumbnail_shop.png;compress=true" width="11%">
+				</td>
+			</tr>
+			<tr >
+				<td>
+					<div id=1 style="background-color:#0066cc; height:20px; width:0; border-width:0px; border-color:blue; border-style:solid ; text-align:right;" ></div>
+					
+				</td>
+				<td>
+				<label id="label1">0</label>票
+				</td>
+			</tr>	
+			<tr >
+				<td>
+					<input type="radio" name="option"  />Yuan<img src="https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/365514463/android/sticker.png" width="14%">
+				</td>
+			</tr>
+			<tr >
+				<td>
+					<div id=2 style="background-color:#ff7575; height:20px;width:0;  border-width:0px; border-color:blue; border-style:solid ; text-align:right;" ></div>
+					
+				</td>
+				<td>
+				<label id="label2">0</label>票
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<input type="radio" name="option" />都喜歡
+				</td>
+			</tr>
+			<tr >
+				<td>
+					<div id=3 style="background-color:#5cadad;height:20px;width:0; border-width:0px; border-color:blue; border-style:solid ; text-align:right;" ></div>
+					
+				</td>
+				<td>
+				<label id="label3">0</label>票
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>
+					<input type="submit" value="確認投票" onclick="vote()"/>		
+				</td>
+			</tr>
+		</table>
+	</div>
+<hr>	
+	 <form action="#" method="get" >
+	 <ul> <strong>建立自己的寵物</strong></ul>
+        寵物類別：<label><input type="checkbox" name="hobby">狗
+                    <input type="checkbox" name="hobby">貓咪
+                    <input type="checkbox" name="hobby">兔子
+                    <input type="checkbox" name="hobby">鸚鵡
+                    </label><br>
+        寵物姓名(必填):<input type="text" placeholder="請輸入寵物姓名" required /><br>
+        性別：<label><input type="radio" name="sex" >公
+                    <input type="radio" name="sex">母
+                    <input type="radio" name="sex" checked="checked">無
+                    </label><br>
+        
+        地址(必選)：<label><select name="" id="" required />
+                        <option value="bj">北部</option>
+                        <option value="sh">中部</option>
+                        <option value="sz">東部</option>
+						<option value="sy">南部</option>
+                    </select></label><br>
+        寵物興趣(必填)：<br>
+        <label><textarea cols="20" rows="5" placeholder="任意填寫" required /></textarea></label><br>
+        <input type="submit" value="提交"> <input type="reset" value="重置">
+ <hr>  
+<br />
+
+<div class="popup" onclick="show()"><button style="color:	SlateBlue;" >顯示文字</button>
+        <span class="popuptext" id="popup_text" style="color:MediumSeaGreen;">我的創作簡介!<br />
+<li>猜數字遊戲(答案已設為29)</li> 
+
+<li>隱藏標題</li> 
+
+<li>自行改變標題 </li>
+
+<li>John的介紹(字改變顏色、有照片) </li>
+
+<li>使用清單、列點 </li>
+
+<li>在「John的社群媒體」中，點選文字即可進去連結 </li>
+
+<li>投票(投完票後，右方顯示數目，下方則顯示橫條圖，可以無限投票，但重新整理後不再保存) </li>
+
+<li>建立自己的寵物(有些格子是必填的，如果沒填則無法交出表單) </li>
+
+<li>最後的「顯示文字」點開後即可看到現在這份創作簡介 </li></span>
+    </div>
+	</body>
+	<script>
+			function guessNumber(){
+				ans=29; 
+				x=prompt("請輸入資料"); 
+				while(x!=ans){
+					if(x>ans){
+						x=prompt("太大囉");
+					}else{
+						x=prompt("太小囉");
+					}
+				}	
+				alert("恭喜答對");
+				
+			}
+			i=0;
+			function change(){
+				i++
+				if (i>9){
+					document.querySelector("#start").innerHTML="ABC";
+					document.querySelector("#bt4").style.display="block";
+				}
+				
+			}
+			function hide(){
+				if(document.querySelector("#start").style.display=="none"){
+					document.querySelector("#start").style.display="block";
+					document.querySelector("#bt3").innerHTML="點隱藏標題";
+				}else{
+					document.querySelector("#start").style.display="none";
+					document.querySelector("#bt3").innerHTML="顯示標題";
+				}
+				
+			}
+			function change2(){
+				stitle=document.querySelector("#cin").value;
+				document.querySelector("#start").innerHTML = stitle;
+			}
+			function change3(){
+				document.querySelector("#start").innerHTML = "John(小強)的介紹";
+			}
+			</script>
+			<script type="text/javascript">
+
+	function vote(){	
+		
+		
+		for(var i = 0; i < document.getElementsByName("option").length; i++){
+			
+			if(document.getElementsByName("option")[i].checked == true){
+				var width = document.getElementById(i).style.width;
+				width = parseInt(width);
+				width += 3;
+				document.getElementById(i).style.width = width+"px";
+				
+				var label = "label"+i;
+				var num = document.getElementById(label).innerText;
+				document.getElementById(label).innerText = ++num;
+			}
+		}
+
+	}
+
+
+</script>
+	
+<script>
+    function show() {
+        var popup = document.getElementById("popup_text");
+        popup.classList.toggle("show");
+    }
+</script>	
+		
+		
+		
+
+
+
+</html>
